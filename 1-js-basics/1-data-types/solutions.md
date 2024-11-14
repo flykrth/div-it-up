@@ -7,7 +7,7 @@
 ```javascript
 let age = 1
 let Age = 2
-age == Age      // returns false
+age == Age      			// returns false
 ```
 
 This is because the variables `age` and `Age` are treated as different with different values `1` and `2`. Hence when we check for equality, it returns `false`.
@@ -23,8 +23,8 @@ The `==` operator performs type coercion when 2 different data types are used to
 3. 0 and -0
 
 ```javascript
-0 == -0;        // true
-12/0 == 12/-0;  //false
+0 == -0;        			// true
+12/0 == 12/-0;  			// false
 ```
 
 This is because JavaScript handles numbers differently. There's both positive zero and a negative zero. When checking for equality, they might be the same but when divided by negative and positive zeroes separately, it results in negative and positive infinity respectively.
