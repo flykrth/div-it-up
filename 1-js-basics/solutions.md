@@ -42,7 +42,7 @@ else
 	console.log("Odd number");
 ```
 
-## Data types practice
+## Assignment
 
 Imagine you are building a shopping cart. Write some documentation on the data types that you would need to complete your shopping experience. How did you arrive at your choices?
 
@@ -62,7 +62,7 @@ Imagine you are building a shopping cart. Write some documentation on the data t
 ### Difference between functions and methods in one sentence
 Functions are independent set of instructions and do not depend on any objects, whereas method is a function which is linked with an object.
 
-# Assignment
+## Assignment
 Create different functions, both functions that return something and functions that don't return anything. Also create a function that has a mix of parameters and parameters with default values.
 
 
@@ -90,3 +90,46 @@ function velocityOfRaindrop(u, a=(-9.81), t) {
     return(v);
 }
 ```
+
+# 3-making-decisions
+
+### 🚀 Challenges
+Create a program that is written first with logical operators, and then rewrite it using a ternary expression. 
+
+### Program using logical operators
+```javascript
+if (num%2==0) {
+    console.log("Even number");
+} else {
+    console.log("Odd number");
+}
+```
+
+### Same program using ternary operators
+```javascript
+console.log(((num%2==0) ? "Even number" : "Odd number" ));
+```
+Ternary operators keep the code neat when a simple and quick decision-making is required.
+
+
+## Assignment
+Grading system program
+```javascript
+let allStudents = ['A', 'B-', 1, 4, 5, 2];
+let studentsWhoPass = [];
+
+for (let i = 0; i < allStudents.length; i++) {
+    if (isNaN(allStudents[i])) {
+        if (allStudents[i]!='C-') {
+            studentsWhoPass.push(allStudents[i]);
+        }
+    } else {
+        if (allStudents[i]>=3) {
+            studentsWhoPass.push(allStudents[i]);
+        }
+    }
+}
+console.log(studentsWhoPass);
+```
+
+
