@@ -8,7 +8,7 @@
 ```javascript
 let age = 1
 let Age = 2
-age == Age      			// returns false
+age == Age          // returns false
 ```
 
 This is because the variables `age` and `Age` are treated as different with different values `1` and `2`. Hence when we check for equality, it returns `false`.
@@ -24,8 +24,8 @@ The `==` operator performs type coercion when 2 different data types are used to
 3. 0 and -0
 
 ```javascript
-0 == -0;        			// true
-12/0 == 12/-0;  			// false
+0 == -0;                // true
+12/0 == 12/-0;          // false
 ```
 
 This is because JavaScript handles numbers differently. There's both positive zero and a negative zero. When checking for equality, they might be the same but when divided by negative and positive zeroes separately, it results in negative and positive infinity respectively.
@@ -132,4 +132,35 @@ for (let i = 0; i < allStudents.length; i++) {
 console.log(studentsWhoPass);
 ```
 
+# 4-arrays-loops
 
+### 🚀 Challenges
+Looping over an array using forEach.
+```javascript
+let states = ["Kerala", "Tamil Nadu", "Karnataka", "Andhra Pradesh", "Telangana"];
+states.forEach((i) => console.log(i));
+```
+
+Looping over an array using for-of.
+```javascript
+let states = ["Kerala", "Tamil Nadu", "Karnataka", "Andhra Pradesh", "Telangana"];
+for (const i  of states) {
+    console.log(i);
+}
+```
+
+Looping over an array using map.
+```javascript
+let states = ["Kerala", "Tamil Nadu", "Karnataka", "Andhra Pradesh", "Telangana"];
+const i = states.map((x) => x);
+console.log(i);
+```
+
+## Assignment
+Create a program that lists every 3rd number between 1-20 and prints it to the console.
+
+```javascript
+for (let i=1; i<=20; i+=3) {
+    console.log(i);
+}
+```
