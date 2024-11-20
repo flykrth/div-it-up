@@ -70,4 +70,111 @@ Imagine you are designing, or redesigning, your personal web site. Create a grap
 ```
 
 Web page screenshot:
-![alt text](image.png)
+![alt text](/div-it-up/2-terrarium/images/image-0.png).
+
+# 2-intro-to-css
+
+### 🚀Challenge
+
+Add a 'bubble' shine to the left bottom area of the jar to make it look more glasslike. You will be styling the ```.jar-glossy-long``` and ```.jar-glossy-short``` to look like a reflected shine.
+```css
+.jar-glossy-long {
+    width: 5%;
+    height: 40%;
+    background: #45dbe3;
+    position: absolute;
+    border-radius: 1rem 1rem 1rem 1rem;
+    bottom: 15%;
+    left: 5%;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+
+.jar-glossy-short {
+    width: 5%;
+    height: 10%;
+    background: #45dbe3;
+    position: absolute;
+    border-radius: 1rem 1rem 1rem 1rem;
+    bottom: 60%;
+    left: 5%;
+    opacity: 0.7;
+    z-index: 1;
+}
+```
+
+Here's how it looks like:
+![alt text](/div-it-up/2-terrarium/images/image-1.png)
+
+### Assignment
+Restyle the terrarium using either Flexbox or CSS Grid, and take screenshots to show that you have tested it on several browsers.
+
+```index.html```
+```html
+<div id="page">
+    <div class="flex-container">
+        <div>
+            <img class="plant" alt="plant" id="plant1" src="./images/plant1.png" />
+        </div>
+        <div>
+            <img class="plant" alt="plant" id="plant2" src="./images/plant2.png" />
+        </div>
+        <div>
+            <img class="plant" alt="plant" id="plant3" src="./images/plant3.png" />
+        </div>
+        <div>
+            <img class="plant" alt="plant" id="plant4" src="./images/plant4.png" />
+        </div>
+        <div>
+            <img class="plant" alt="plant" id="plant5" src="./images/plant5.png" />
+        </div>
+        <div>
+            <img class="plant" alt="plant" id="plant6" src="./images/plant6.png" />
+        </div>
+        <div>
+            <img class="plant" alt="plant" id="plant7" src="./images/plant7.png" />
+        </div>
+        <div>
+            <img class="plant" alt="plant" id="plant8" src="./images/plant8.png" />
+        </div>
+        <div>
+            <img class="plant" alt="plant" id="plant9" src="./images/plant9.png" />
+        </div>
+        <div>
+            <img class="plant" alt="plant" id="plant10" src="./images/plant10.png" />
+        </div>
+        <div>
+            <img class="plant" alt="plant" id="plant11" src="./images/plant11.png" />
+        </div>
+        <div>
+            <img class="plant" alt="plant" id="plant12" src="./images/plant12.png" />
+        </div>
+        <div>
+            <img class="plant" alt="plant" id="plant13" src="./images/plant13.png" />
+        </div>
+        <div>
+            <img class="plant" alt="plant" id="plant14" src="./images/plant14.png" />
+        </div>
+    </div>
+```
+<br>
+
+```style.css```
+
+```css
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #aac3e1;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    padding: 10px;
+}
+```
+
+Screenshot:
+![alt text](/div-it-up/2-terrarium/images/image-2.png)
