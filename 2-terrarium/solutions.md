@@ -70,7 +70,7 @@ Imagine you are designing, or redesigning, your personal web site. Create a grap
 ```
 
 Web page screenshot:
-![alt text](/div-it-up/2-terrarium/images/image-0.png).
+![alt text](/2-terrarium/images/image-0.png).
 
 # 2-intro-to-css
 
@@ -105,7 +105,7 @@ Add a 'bubble' shine to the left bottom area of the jar to make it look more gla
 ```
 
 Here's how it looks like:
-![alt text](/div-it-up/2-terrarium/images/image-1.png)
+![alt text](/2-terrarium/images/image-1.png)
 
 ### Assignment
 Restyle the terrarium using either Flexbox or CSS Grid, and take screenshots to show that you have tested it on several browsers.
@@ -177,4 +177,4 @@ Restyle the terrarium using either Flexbox or CSS Grid, and take screenshots to 
 ```
 
 Screenshot:
-![alt text](/div-it-up/2-terrarium/images/image-2.png)
+![alt text](/2-terrarium/images/image-2.png)
