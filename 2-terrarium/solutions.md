@@ -70,7 +70,7 @@ Imagine you are designing, or redesigning, your personal web site. Create a grap
 ```
 
 Web page screenshot:
-![alt text](/2-terrarium/images/image-0.png).
+![alt text](/div-it-up/2-terrarium/images/image-0.png).
 
 # 2-intro-to-css
 
@@ -105,7 +105,7 @@ Add a 'bubble' shine to the left bottom area of the jar to make it look more gla
 ```
 
 Here's how it looks like:
-![alt text](/2-terrarium/images/image-1.png)
+![alt text](/div-it-up/2-terrarium/images/image-1.png)
 
 ### Assignment
 Restyle the terrarium using either Flexbox or CSS Grid, and take screenshots to show that you have tested it on several browsers.
@@ -177,4 +177,45 @@ Restyle the terrarium using either Flexbox or CSS Grid, and take screenshots to 
 ```
 
 Screenshot:
-![alt text](/2-terrarium/images/image-2.png)
+![alt text](/div-it-up/2-terrarium/images/image-2.png)
+
+# 3-intro-to-DOM-and-closures
+
+### 🚀Challenge
+I implemented the functionality of adding new plants into the Terrarium using the following form and corresponding script changes.
+
+```index.html```
+```html
+<form id="uploadPlantForm" onsubmit="addPlantsrc(event)">
+	<div id="button" style="width:800px; margin:0 auto;">
+		<input type="file" id="newPlantFile" required>
+		<input type="submit">
+	</div>
+</form>
+
+<div id="addedPlantContainer"></div>
+```
+
+```script.js```
+```javascript
+function addPlantsrc(event) {
+	event.preventDefault();
+	
+	const fileInput = document.getElementById('newPlantFile');
+	const file = fileInput.files[0];
+
+	const path = URL.createObjectURL(file);
+	
+	const newPlant = document.createElement('img');
+	newPlant.src = path;
+	newPlant.classList.add('newPlant');
+	newPlant.style.position = "absolute";
+	
+	document.getElementById('addedPlantContainer').appendChild(newPlant);
+	dragElement(newPlant);
+	
+}
+```
+
+### Assignment
+The Document interface represents any web page loaded in the browser and serves as an entry point into the web page's content, which is the DOM tree. It is being actively used in all the websites. For example, https://www.google.com/ uses the ```document.getElementId()``` method to find and manipulate elements of the webpage. Most basic implementation is the clicking of ```Enter``` key or ```Search``` button for a Google search evokes the ```document.addEventListener()``` to realize and perform the interactions necessary.
