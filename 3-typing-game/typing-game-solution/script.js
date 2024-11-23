@@ -18,6 +18,10 @@ let startTime = Date.now();
 const quoteElement = document.getElementById('quote');
 const messageElement = document.getElementById('message');
 const typedValueElement = document.getElementById('typed-value');
+// modal elements
+const modal = document.getElementById('successModal');
+const closeModal = document.getElementById('closeModal');
+const modalMessage = document.getElementById('modalMessage');
 
 document.getElementById('start').addEventListener('click', () => {
     // get a quote
@@ -65,7 +69,8 @@ typedValueElement.addEventListener('input', () => {
         // Display success
         const elapsedTime = new Date().getTime() - startTime;
         const message = `CONGRATULATIONS! You finished in ${elapsedTime / 1000} seconds.`;
-        messageElement.innerText = message;
+        modalMessage.innerText = message;
+        modal.style.display = 'block';
     } else if (typedValue.endsWith(' ') && typedValue.trim() === currentWord) {
       // end of word
       // clear the typedValueElement for the new word
@@ -86,4 +91,8 @@ typedValueElement.addEventListener('input', () => {
       // error state
       typedValueElement.className = 'error';
     }
+});
+
+closeModal.addEventListener('click', () => {
+    modal.style.display = 'none';
 });

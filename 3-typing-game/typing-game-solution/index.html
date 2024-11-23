@@ -13,6 +13,14 @@
             <input type="text" aria-label="current word" id="typed-value" />
             <button type="button" id="start">Start</button>
         </div>
+        <div id="successModal" style="display: none; position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5);">
+            <div style="background: rgb(23, 36, 44); margin: 20% auto; padding: 20px; width: 50%; text-align: center; border-radius: 10px;">
+                <span id="closeModal" style="float: right; font-size: 20px; cursor: pointer;">&times;</span>
+                <p id="modalMessage"></p>
+            </div>
+        </div>
+        
         <script src="script.js"></script>
+          
     </body>
 </html>
