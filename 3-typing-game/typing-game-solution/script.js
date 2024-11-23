@@ -11,6 +11,7 @@ const quotes = [
 // store the list of words and the index of the word the player is currently typing
 let words = [];
 let wordIndex = 0;
+let gameEnded = false;
 // the starting time
 let startTime = Date.now();
 // page elements
@@ -26,7 +27,8 @@ document.getElementById('start').addEventListener('click', () => {
     words = quote.split(' ');
     // reset the word index for tracking
     wordIndex = 0;
-  
+    gameEnded = false;
+    typedValueElement.disabled = false;
     // UI updates
     // Create an array of span elements so we can set a class
     const spanWords = words.map(function(word) { return `<span>${word} </span>`});
@@ -50,17 +52,20 @@ document.getElementById('start').addEventListener('click', () => {
 
 // typing functionality
 typedValueElement.addEventListener('input', () => {
+    if (gameEnded) return;
     // Get the current word
     const currentWord = words[wordIndex];
     // get the current value
     const typedValue = typedValueElement.value;
   
     if (typedValue === currentWord && wordIndex === words.length - 1) {
-      // end of sentence
-      // Display success
-      const elapsedTime = new Date().getTime() - startTime;
-      const message = `CONGRATULATIONS! You finished in ${elapsedTime / 1000} seconds.`;
-      messageElement.innerText = message;
+        isCompleted = true;
+        typedValueElement.disabled = true;
+        // end of sentence
+        // Display success
+        const elapsedTime = new Date().getTime() - startTime;
+        const message = `CONGRATULATIONS! You finished in ${elapsedTime / 1000} seconds.`;
+        messageElement.innerText = message;
     } else if (typedValue.endsWith(' ') && typedValue.trim() === currentWord) {
       // end of word
       // clear the typedValueElement for the new word
