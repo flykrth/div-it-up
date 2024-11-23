@@ -22,7 +22,14 @@ const typedValueElement = document.getElementById('typed-value');
 const modal = document.getElementById('successModal');
 const closeModal = document.getElementById('closeModal');
 const modalMessage = document.getElementById('modalMessage');
-
+// high score
+let highScore = localStorage.getItem('highScore') || null;
+function updateHighScore(newScore) {
+    if (!highScore || newScore < highScore) {
+        highScore = newScore;
+        localStorage.setItem('highScore', highScore);
+    }
+}
 document.getElementById('start').addEventListener('click', () => {
     // get a quote
     const quoteIndex = Math.floor(Math.random() * quotes.length);
@@ -68,7 +75,8 @@ typedValueElement.addEventListener('input', () => {
         // end of sentence
         // Display success
         const elapsedTime = new Date().getTime() - startTime;
-        const message = `CONGRATULATIONS! You finished in ${elapsedTime / 1000} seconds.`;
+        updateHighScore(elapsedTime/1000);
+        const message = `CONGRATULATIONS! You finished in ${elapsedTime / 1000} seconds.\nYour high score: ${highScore} seconds`;
         modalMessage.innerText = message;
         modal.style.display = 'block';
     } else if (typedValue.endsWith(' ') && typedValue.trim() === currentWord) {
