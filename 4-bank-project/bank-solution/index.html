@@ -3,46 +3,51 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Kanit&display=swap" rel="stylesheet">
         <script src="app.js" defer></script>
     </head>
     
-    <body bgcolor="DarkGrey">
+    <body>
         <div id="app">Loading...</div>
         
         <template id="login">
             <script>
                 document.title = "Bank App"
             </script>
-            <h1>Bank App</h1>
-            <div>
-                <span id="error"></span>
-            </div>
-            <section>
-                <a href="/dashboard" onclick="onLinkClick(event)">Login</a>
+            <h1 id="bankName">Oganesson Bank</h1>
+            <section id="loginSection">
+                <!-- <a id="loginbutton" href="/dashboard" onclick="onLinkClick(event)">Login</a> -->
+                <br><h2>Login</h2>
                 <form id="loginForm">
-                    <label for="username">Username</label>
-                    <input id="username" name="user" type="text">
-                    <button>Login</button>
-                </form>
-                <hr/>
+                    <label for="username">Username</label><br>
+                    <input id="username" name="user" type="text"><br><br>
+                    <button class="loginButtons">Login</button>
+                </form><br>
+                <div class="separator">OR</div>
                 <h2>Register</h2>
                 <form id="registerForm" action="javascript:register()">
                     <label for="user">Username</label>
-                    <input id="user" name="user" type="text" maxlength="20" required>
-
+                    <br>
+                    <input id="user" name="user" type="text" maxlength="20" required><br>
+                    <br>
                     <label for="currency">Currency</label>
-                    <input id="currency" name="currency" type="text" value="$" maxlength="5" required>
-                    
+                    <br>
+                    <input id="currency" name="currency" type="text" value="$" maxlength="5" required><br>
+                    <br>
                     <label for="description">Description</label>
-                    <input id="description" name="description" type="text" maxlength="100">
-                    
+                    <br>
+                    <input id="description" name="description" type="text" maxlength="100"><br>
+                    <br>
                     <label for="balance">Current balance</label>
-                    <input id="balance" name="balance" type="number" value="0">
-                    
-                    <button>Register</button>
+                    <br>
+                    <input id="balance" name="balance" type="number"><br>
+                    <br>
+                    <div id="error"></div>
+                    <button class="loginButtons">Register</button>
                 </form>
                 <br>
-                <a href="/credits" onclick="onLinkClick(event)">Credits</a>
+                <!-- <a href="/credits" onclick="onLinkClick(event)">Credits</a> -->
             </section>
         </template>
     

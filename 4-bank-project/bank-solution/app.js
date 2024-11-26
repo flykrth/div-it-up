@@ -31,20 +31,26 @@ async function register() {
     const result = await createAccount(jsonData);
     if (result.error) {
       return console.log('An error occurred:', result.error);
-    }
+    }  
     console.log('Account created!', result);
 }
 async function createAccount(account) {
     try {
-        const response = await fetch('//localhost:5000/api/accounts', {
+        const response = await fetch('http://localhost:5000/api/accounts/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: account
         });
-        return await response.json();
+        const res =  await response.json(); //why
+        if(res.error){
+            errorMessage()
+        } else {
+            return response
+        }
     } catch (error) {
-        errorMessage();
-        return { error: error.message || 'Unknown error' };
+        console.log("hell")
+        errorMessage()
+        return ('Unknown error') ;
     }
 }
 
